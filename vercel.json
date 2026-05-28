@@ -1,0 +1,17 @@
+﻿{
+  "builds": [
+    {
+      "src": "artifacts/haloruma/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "artifacts/haloruma/dist/public"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/artifacts/haloruma/index.html"
+    }
+  ]
+}
