@@ -14,5 +14,6 @@
                         },
     "engines":  {
                     "pnpm":  "9.x"
-                }
+                },
+    "packageManager":  "pnpm@9.x"
 }
