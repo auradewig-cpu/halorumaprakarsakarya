@@ -1,44 +1,72 @@
-# [Project name]
+# HALORUMA PRAKARSA KARYA
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+Website company profile untuk CV Haloruma Prakarsa Karya — studio arsitektur, desain interior, dan kontraktor profesional di Surabaya.
 
 ## Run & Operate
 
-- `pnpm --filter @workspace/api-server run dev` — run the API server (port 5000)
-- `pnpm run typecheck` — full typecheck across all packages
-- `pnpm run build` — typecheck + build all packages
-- `pnpm --filter @workspace/api-spec run codegen` — regenerate API hooks and Zod schemas from the OpenAPI spec
-- `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
-- Required env: `DATABASE_URL` — Postgres connection string
+- `pnpm --filter @workspace/haloruma run dev` — jalankan website (port 20628)
+- `pnpm --filter @workspace/api-server run dev` — jalankan API server (port 8080)
+- `pnpm run typecheck` — full typecheck semua packages
+- `pnpm run build` — typecheck + build semua packages
 
 ## Stack
 
 - pnpm workspaces, Node.js 24, TypeScript 5.9
-- API: Express 5
-- DB: PostgreSQL + Drizzle ORM
-- Validation: Zod (`zod/v4`), `drizzle-zod`
-- API codegen: Orval (from OpenAPI spec)
-- Build: esbuild (CJS bundle)
+- Frontend: React + Vite + Tailwind CSS
+- Routing: wouter
+- Animasi: Framer Motion
+- SEO: react-helmet-async
+- Carousel: embla-carousel-react
+- Icons: lucide-react
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
-
-## Architecture decisions
-
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+- Frontend: `artifacts/haloruma/src/`
+  - Pages: `src/pages/` (home, about, services, portfolio, process, contact)
+  - Components: `src/components/layout/` (Navbar, Footer, WhatsAppButton), `src/components/SEO.tsx`
+  - Images: `artifacts/haloruma/public/images/` (AI-generated)
+  - SEO files: `artifacts/haloruma/public/robots.txt`, `sitemap.xml`
+- API: `artifacts/api-server/src/` (health check only)
+- API spec: `lib/api-spec/openapi.yaml`
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+Website company profile 6 halaman yang fully responsive:
+- **Home** — Hero, stats, layanan, portofolio, proses, testimonial, CTA
+- **Tentang Kami** — Story, visi/misi, tim, values
+- **Layanan** — Arsitektur, Interior, Kontraktor + FAQ
+- **Portofolio** — Grid terfilter dengan detail proyek
+- **Proses** — 6 langkah kerja dengan scroll storytelling
+- **Kontak** — Form + info + Google Maps embed
+- WhatsApp floating bubble (bottom-right, green, pulse animation)
+
+## Brand
+
+- Warna utama: Copper Gold #C8963E, Obsidian Black #0D0D0D, Warm Ivory #F4EFE6
+- Font: Cormorant Garamond (display), Syne (nav), Lato (body), Playfair Display (accent), DM Mono (stats)
+- WhatsApp: wa.me/6281234565694
+- Alamat: Jl. Keputih Tegal Bakti I No.51, Keputih, Sukolilo, Surabaya 60111
+
+## Architecture decisions
+
+- Presentation-first (no backend) — pure static React SPA
+- react-helmet-async untuk SEO meta tags per halaman
+- Framer Motion untuk semua animasi dan transisi
+- wouter untuk routing ringan (tanpa React Router overhead)
+- Semua gambar AI-generated disimpan di `public/images/`
 
 ## User preferences
 
-_Populate as you build — explicit user instructions worth remembering across sessions._
+- Website dalam Bahasa Indonesia
+- WhatsApp bubble harus ada di semua halaman
+- Responsive untuk mobile, tablet, dan desktop
+- SEO-friendly dengan meta tags dan JSON-LD structured data
 
 ## Gotchas
 
-_Populate as you build — sharp edges, "always run X before Y" rules._
+- wouter v3: `<Link>` sudah render sebagai `<a>` — jangan tambahkan `<a>` di dalam `<Link>` (menyebabkan nested anchor warning)
+- Google Fonts `@import url()` HARUS di baris pertama index.css sebelum `@import "tailwindcss"`
+- `react-helmet-async` ada di dependencies (bukan catalog), install via `pnpm add` di artifact haloruma
 
 ## Pointers
 

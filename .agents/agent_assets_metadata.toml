@@ -1,0 +1,56 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "qYYtGlPzVKr9H_rBGPOkE"
+uri = "file://artifacts/haloruma/public/images/hero.png"
+type = "image"
+title = "modern luxury interior hero"
+
+[[generated]]
+id = "DZmO-muv-1nATdMqts8TN"
+uri = "file://artifacts/haloruma/public/images/service-arsitektur.png"
+type = "image"
+title = "blueprint exterior"
+
+[[generated]]
+id = "HhbD_vrEZExTSVj_y7YhP"
+uri = "file://artifacts/haloruma/public/images/service-interior.png"
+type = "image"
+title = "luxury living room"
+
+[[generated]]
+id = "M7x9ff1IQe_veqnRg8H8f"
+uri = "file://artifacts/haloruma/public/images/service-kontraktor.png"
+type = "image"
+title = "construction site"
+
+[[generated]]
+id = "cZ4NVu4mpHjC8FkyQsHGC"
+uri = "file://artifacts/haloruma/public/images/portfolio-1.png"
+type = "image"
+title = "modern house exterior"
+
+[[generated]]
+id = "-nB7gtAAY9ZBZl0uT1XZr"
+uri = "file://artifacts/haloruma/public/images/portfolio-2.png"
+type = "image"
+title = "office space"
+
+[[generated]]
+id = "YPLvD9Ll1JIgKrHHrvn3v"
+uri = "file://artifacts/haloruma/public/images/portfolio-3.png"
+type = "image"
+title = "marble kitchen"
+
+[[generated]]
+id = "WXDg5_1TmiqdmCKXQ7m78"
+uri = "file://artifacts/haloruma/public/images/portfolio-4.png"
+type = "image"
+title = "cafe interior"
+
+[[generated]]
+id = "Qj5WECoPr0BlklFjR907j"
+uri = "file://artifacts/haloruma/public/images/about-team.png"
+type = "image"
+title = "architect at work"

@@ -1,0 +1,884 @@
+# HALORUMA PRAKARSA KARYA — Website Blueprint
+### Company Profile · Architect · Interior · Kontraktor
+*Design Specification Document v1.0 — Figma-Ready*
+
+---
+
+## 🏛️ BRAND IDENTITY SYSTEM
+
+### Brand Positioning
+> *"Ruang yang Hidup, Karya yang Abadi"*
+> *("Spaces That Live, Works That Last")*
+
+**Brand Archetype:** The Creator × The Ruler — Prestige, craftsmanship, and bold spatial vision.
+
+**Brand Voice:** Sophisticated · Trustworthy · Visionary · Earthy-Luxe
+
+---
+
+### Color Palette
+
+```
+PRIMARY
+──────────────────────────────────────────────────
+Obsidian Black    #0D0D0D   — Backgrounds, headlines
+Warm Ivory        #F4EFE6   — Body bg, cards, panels
+Stone Warm        #BEB5A8   — Borders, secondary text
+
+ACCENT
+──────────────────────────────────────────────────
+Copper Gold       #C8963E   — CTA buttons, highlights, lines
+Terracotta        #B05B3B   — Hover states, section markers
+Forest Sage       #4A5E4E   — Tags, badges, nature elements
+
+NEUTRAL
+──────────────────────────────────────────────────
+Ash Gray          #6E6C68   — Body text
+Chalk White       #FAFAF8   — Pure surface
+Deep Charcoal     #1C1C1C   — Dark sections bg
+```
+
+---
+
+### Typography System
+
+```
+DISPLAY / HEADLINE
+Font: "Cormorant Garamond" — Serif, editorial luxury
+Weight: 300 (Light) for large display, 600 (SemiBold) for emphasis
+Use: Hero titles, section headers, quotes
+
+SUBHEADING / NAVIGATION
+Font: "Syne" — Geometric, modern, architectural
+Weight: 400 Regular / 700 Bold
+Use: Nav links, subheadings, labels
+
+BODY / PARAGRAPH
+Font: "Lato" — Clean, humanist, readable
+Weight: 300 Light / 400 Regular
+Use: Paragraphs, descriptions, captions
+
+ACCENT / DETAIL
+Font: "Playfair Display" — Classical elegant serif
+Weight: 400 Italic
+Use: Pull quotes, testimonials, section accents
+
+MONOSPACE / DETAIL
+Font: "DM Mono"
+Use: Statistics numbers, counters, coordinates
+```
+
+---
+
+### Logo Specification
+
+```
+PRIMARY LOGO
+┌─────────────────────────────────┐
+│  ◈  HALORUMA                    │
+│     PRAKARSA KARYA              │
+│  ── Architect · Interior · Kontraktor ──  │
+└─────────────────────────────────┘
+
+Symbol: Geometric monogram "HPK" 
+composed of architectural lines 
+suggesting a floor plan / elevation.
+
+Variations:
+- Full horizontal lockup (header)
+- Stacked square version (favicon, stamps)
+- Monogram only "◈" (minimal use)
+- Dark on Ivory | Copper on Black | White on Dark
+```
+
+---
+
+## 🌐 SITE ARCHITECTURE
+
+```
+HOME (/)
+├── TENTANG KAMI (/tentang-kami)
+├── LAYANAN (/layanan)
+│   ├── Arsitektur (/layanan/arsitektur)
+│   ├── Desain Interior (/layanan/interior)
+│   └── Kontraktor (/layanan/kontraktor)
+├── PORTOFOLIO (/portofolio)
+│   ├── Residensial
+│   ├── Komersial
+│   └── Hospitality
+├── PROSES (/proses)
+├── KONTAK (/kontak)
+└── BLOG / INSPIRASI (/blog)  [optional]
+```
+
+---
+
+## 📐 PAGE-BY-PAGE LAYOUT SPECIFICATION
+
+---
+
+### PAGE 1 — HOME
+
+---
+
+#### SECTION 1.1 — NAVIGATION BAR
+
+```
+Layout: Full-width · Fixed sticky · Transparent → Solid on scroll
+
+LEFT:   Logo lockup (SVG) — "◈ HALORUMA PRAKARSA KARYA"
+CENTER: Navigation links — Tentang · Layanan · Portofolio · Proses · Kontak
+RIGHT:  CTA Button "Konsultasi Gratis" [Copper Gold, rounded-pill]
+        + WhatsApp icon shortcut
+
+Height: 80px desktop / 64px mobile
+BG on scroll: rgba(13,13,13,0.96) with blur backdrop
+
+Hover state: Nav links underline grows from center (animated)
+Mobile: Hamburger → Full screen overlay menu with staggered link reveal
+```
+
+---
+
+#### SECTION 1.2 — HERO
+
+```
+Layout: Full viewport height (100vh) · Split asymmetric
+
+LEFT PANEL (55%):
+  - Small label: "Surabaya · Est. 2020"
+  - Headline (Cormorant, 88px, Light):
+    "Merancang  
+     Ruang yang  
+     Bercerita."
+  - Subline (Syne, 16px):
+    "Arsitek · Desainer Interior · Kontraktor Profesional"
+  - Body (Lato, 15px, Ash Gray):
+    "Kami membangun lebih dari sekadar struktur —  
+     kami menciptakan pengalaman ruang yang  
+     mencerminkan jiwa penghuninya."
+  - CTA Row:
+    [Lihat Portofolio →]  (Copper Gold, filled)
+    [Hubungi Kami]  (Ghost, outlined)
+  - Scroll indicator: animated vertical line + "Scroll" text
+
+RIGHT PANEL (45%):
+  - Full-bleed high-res image: 
+    → Modern luxury interior / architectural facade
+    → Subtle parallax on scroll
+  - Image overlay: thin copper gold diagonal line (decorative)
+  - Floating badge (bottom-left of image):
+    "50+ Proyek Selesai" [dark glass card]
+
+Background: Warm Ivory
+Decoration: Subtle architectural grid lines (5% opacity, Stone Warm)
+Animation: Text staggered fade-up on load (0.1s delay each line)
+```
+
+**HERO IMAGE CONTENT:**
+- Photo: Modern minimalist living room OR dramatic architectural exterior at golden hour
+- Style: Editorial photography quality, high contrast, warm tones
+
+---
+
+#### SECTION 1.3 — STATISTICS / TRUST BAR
+
+```
+Layout: Full width · Dark background (#1C1C1C) · 4 columns
+
+STATS (DM Mono font, large):
+┌──────────┬──────────┬──────────┬──────────┐
+│   50+    │    8+    │   100%   │   15+    │
+│ Proyek   │  Tahun   │ Klien    │  Kota    │
+│ Selesai  │Pengalaman│  Puas    │ Dikerjakan│
+└──────────┴──────────┴──────────┴──────────┘
+
+Counter animation: numbers count up when section enters viewport
+Dividers: thin vertical Copper Gold lines between columns
+```
+
+---
+
+#### SECTION 1.4 — LAYANAN UTAMA (Services)
+
+```
+Layout: Asymmetric 3-column grid · Warm Ivory bg
+
+Section Label: "APA YANG KAMI LAKUKAN"  (Syne, 11px, letter-spacing 4px, Copper Gold)
+Section Title: "Tiga Pilar Keahlian Kami" (Cormorant, 56px)
+
+SERVICE CARDS (staggered layout — not uniform grid):
+
+CARD 1 — ARSITEKTUR
+Icon: Architectural line drawing (blueprint style)
+Image bg: Drone shot of completed building
+Title: "Desain Arsitektur"
+Body: "Dari konsep hingga gambar kerja — kami merancang 
+       bangunan yang harmonis antara fungsi, estetika, 
+       dan konteks lingkungan."
+Tag: [Residensial] [Komersial] [Hospitality]
+Link: "Pelajari Lebih →"
+
+CARD 2 — INTERIOR  (featured/larger card)
+Icon: Interior furniture line art
+Image bg: Luxury bedroom or living room
+Title: "Desain Interior"
+Body: "Setiap detail ruang kami rancang dengan presisi —  
+       material, pencahayaan, furnitur, hingga aroma ruang  
+       yang menyatu dalam harmoni sempurna."
+Tag: [Residential] [Office] [Retail]
+Link: "Pelajari Lebih →"
+
+CARD 3 — KONTRAKTOR
+Icon: Construction/building line art
+Image bg: Construction site with professional workers
+Title: "Jasa Kontraktor"
+Body: "Pelaksanaan konstruksi yang tepat waktu, tepat anggaran,  
+       dan berstandar kualitas tinggi dengan pengawasan penuh."
+Tag: [Sipil] [Finishing] [Renovasi]
+Link: "Pelajari Lebih →"
+
+Hover: Cards lift with shadow + image zooms 1.05x
+```
+
+---
+
+#### SECTION 1.5 — FEATURED PORTFOLIO
+
+```
+Layout: Full-width horizontal scroll gallery + selected grid
+
+Section Label: "KARYA PILIHAN"
+Section Title: "Portofolio yang  
+                Berbicara Sendiri"
+
+GALLERY LAYOUT: Masonry-style 
+- Row 1: 1 large landscape (60%) + 1 portrait (40%)
+- Row 2: 3 equal squares
+- Row 3: 1 portrait (35%) + 1 landscape (65%)
+
+Each portfolio item:
+- Full image (high quality)
+- On hover: dark overlay slides up from bottom with:
+  - Project name
+  - Category tag
+  - Location
+  - "Lihat Detail →"
+
+CTA below grid: [Lihat Semua Proyek →]
+
+PORTFOLIO IMAGES REQUIRED:
+1. Modern house exterior — daytime, clean architecture
+2. Luxury living room interior — warm lighting
+3. Office space interior — open plan, modern
+4. Kitchen design — marble + wood combination
+5. Restaurant/cafe interior — moody hospitality design
+6. Construction progress — professional site photo
+```
+
+---
+
+#### SECTION 1.6 — ABOUT TEASER
+
+```
+Layout: 50/50 split · Dark bg (#0D0D0D)
+
+LEFT: Large image — team at work / architect reviewing drawings
+      Overlapping copper gold decorative frame (partial border)
+
+RIGHT:
+  Label: "TENTANG HALORUMA"
+  Title: "Dibentuk dari  
+          Passion,  
+          Dibangun dari  
+          Kepercayaan."
+  Body:  "CV Haloruma Prakarsa Karya adalah studio  
+          multidisiplin yang mengintegrasikan arsitektur,  
+          desain interior, dan konstruksi dalam satu atap.  
+          Berbasis di Surabaya, kami telah melayani  
+          klien dari berbagai penjuru Indonesia."
+  CTA: [Cerita Kami →]
+  
+  Signature element: Founders' handwritten signature (SVG or image)
+```
+
+---
+
+#### SECTION 1.7 — PROCESS PREVIEW
+
+```
+Layout: Timeline horizontal (desktop) / vertical (mobile)
+
+Section Title: "Cara Kami Bekerja"
+Subtitle: "Proses Transparan, Hasil Terprediksi"
+
+STEPS:
+01. KONSULTASI    → Dengarkan visi dan kebutuhan Anda
+02. KONSEP        → Sketsa & mood board awal
+03. DESAIN        → Gambar kerja, 3D render, RAB
+04. PELAKSANAAN   → Konstruksi & pengawasan ketat
+05. SERAH TERIMA  → Finishing & quality check
+
+Visual: Each step connected by copper gold dotted line
+Icons: Minimal architectural line icons
+```
+
+---
+
+#### SECTION 1.8 — TESTIMONIAL
+
+```
+Layout: Full width · Warm Ivory · Centered
+
+Section Title: "Kata Mereka"
+
+TESTIMONIAL CAROUSEL:
+Cards rotate every 5s, manual dots navigation
+
+TESTIMONIAL CARD FORMAT:
+  ❝ [Quote text — 2-3 sentences] ❞
+  ── 
+  [Client Name]
+  [Project Type · Location]
+  [Star rating ★★★★★]
+
+SAMPLE TESTIMONIALS:
+1. "Haloruma mengubah rumah kami menjadi tempat yang benar-benar 
+    kami impikan. Proses yang profesional dan tim yang sangat 
+    responsif." — Keluarga Santoso, Surabaya
+2. "Interior kantor kami kini mencerminkan brand kami dengan 
+    sempurna. Hasil melebihi ekspektasi!" — PT. Maju Bersama, Jakarta
+3. "Kontraktornya tepat waktu, rapih, dan harga sesuai kesepakatan. 
+    Tidak ada surprise biaya!" — Bapak Hendra, Sidoarjo
+
+Background decoration: Large opening quote mark (Copper Gold, 200px, 8% opacity)
+```
+
+---
+
+#### SECTION 1.9 — CTA BANNER
+
+```
+Layout: Full width · Deep forest bg OR dark textured bg
+        Architectural blueprint texture overlay (5%)
+
+Content (centered):
+  Large Title: "Siap Mewujudkan  
+                Ruang Impian Anda?"
+  Subtitle: "Konsultasi pertama kami GRATIS.  
+             Ceritakan visi Anda kepada kami."
+  
+  CTA Buttons:
+  [🟢 Chat WhatsApp]   → wa.me/6281234565694
+  [📞 Hubungi Kami]    → tel:081234565694
+  [📧 Kirim Email]     → mailto:
+
+  Contact info below:
+  📍 Jl. Keputih Tegal Bakti I No.51, Keputih, Sukolilo, Surabaya 60111
+```
+
+---
+
+#### SECTION 1.10 — FOOTER
+
+```
+Layout: 4-column · Dark (#0D0D0D)
+
+COL 1 — BRAND:
+  Logo (white version)
+  Tagline: "Ruang yang Hidup, Karya yang Abadi"
+  Social icons: Instagram · Houzz · LinkedIn · YouTube
+  "© 2025 CV Haloruma Prakarsa Karya"
+
+COL 2 — LAYANAN:
+  Desain Arsitektur
+  Desain Interior
+  Jasa Kontraktor
+  Renovasi & Restorasi
+  Konsultasi
+
+COL 3 — PERUSAHAAN:
+  Tentang Kami
+  Portofolio
+  Proses Kami
+  Blog / Inspirasi
+  Karir
+
+COL 4 — KONTAK:
+  📍 Jl. Keputih Tegal Bakti I No.51,
+     Keputih, Sukolilo, Surabaya 60111
+  📱 0812-3456-5694
+  🕐 Senin–Sabtu, 08.00–17.00 WIB
+  [WhatsApp Button]
+  [Google Maps Link]
+
+Bottom bar: Privacy Policy · Terms · Sitemap
+Thin copper gold line above footer
+```
+
+---
+
+### PAGE 2 — TENTANG KAMI
+
+```
+HERO:
+- Full-width banner: team photo or studio interior
+- Title overlay: "Mengenal Haloruma"
+
+SECTION — OUR STORY:
+- Timeline narrative dari pendirian hingga kini
+- Key milestones with year markers
+
+SECTION — VISI & MISI:
+- Split layout: Visi kiri / Misi kanan
+- Background: architectural blueprint motif
+
+SECTION — TIM INTI:
+- Grid kartu tim: foto + nama + jabatan + LinkedIn
+- Hover: bio singkat reveal
+
+SECTION — VALUES:
+- 4 core values dengan icon dan deskripsi
+  1. Integritas   2. Inovasi   3. Kolaborasi   4. Kualitas
+
+SECTION — SERTIFIKASI & ASOSIASI:
+- Logo badges: IAI, HDII, INKINDO, dll
+```
+
+---
+
+### PAGE 3 — LAYANAN
+
+```
+HERO:
+- Dark bg + architectural detail photo
+- Title: "Layanan Komprehensif  
+          dari Satu Studio"
+
+3 SERVICE DETAIL SECTIONS (alternating layout):
+
+A. ARSITEKTUR
+   - Full detail of services offered
+   - Process steps specific to architecture
+   - Sub-services: Residential / Commercial / Hospitality / Renovation
+   - CTA: Konsultasi Arsitektur
+
+B. DESAIN INTERIOR
+   - Room categories: Living Room / Bedroom / Kitchen / Office / Retail
+   - Style portfolio: Modern / Minimalis / Industrial / Japandi / Klasik
+   - CTA: Konsultasi Interior
+
+C. KONTRAKTOR
+   - Scope: Struktur / MEP / Finishing / Landscape
+   - Quality assurance process
+   - CTA: Konsultasi Kontraktor
+
+FAQ SECTION: Accordion-style common questions
+```
+
+---
+
+### PAGE 4 — PORTOFOLIO
+
+```
+LAYOUT: Filterable masonry grid
+
+FILTER TABS:
+[Semua] [Arsitektur] [Interior] [Kontraktor] 
+[Residensial] [Komersial] [Hospitality]
+
+Each project card:
+- Hero image (high quality)
+- Project name
+- Type + Year
+- Location
+- On hover: view button
+
+PROJECT DETAIL PAGE:
+- Hero image gallery (swiper)
+- Project info sidebar:
+  · Klien, Lokasi, Tahun, Luas, Scope
+- Full description
+- Before/After slider (if applicable)
+- Material palette used
+- Related projects
+
+IMAGE REQUIREMENTS PER PROJECT:
+Minimum 5 photos per project including:
+- Exterior/facade
+- Key interior spaces  
+- Detail shots (materials, fixtures)
+- Night/mood shot
+- Process/construction shot
+```
+
+---
+
+### PAGE 5 — PROSES
+
+```
+LAYOUT: Immersive scroll-storytelling
+
+HEADER: "Perjalanan dari Impian ke Kenyataan"
+
+STEP-BY-STEP FULL SECTIONS:
+
+STEP 01 — KONSULTASI AWAL
+Image: Meeting / discussion scene
+Duration: 1–2 hari
+Detail: Kami mendengarkan visi, budget, timeline
+
+STEP 02 — RISET & ANALISIS  
+Image: Site survey, measurement
+Duration: 3–5 hari
+Detail: Survey lokasi, analisis kebutuhan
+
+STEP 03 — KONSEP & MOOD BOARD
+Image: Sketches, material swatches
+Duration: 5–7 hari
+Detail: Presentasi konsep, revisi
+
+STEP 04 — DESAIN DETAIL & 3D
+Image: 3D render, technical drawings
+Duration: 2–4 minggu
+Detail: Gambar kerja lengkap, RAB final
+
+STEP 05 — PELAKSANAAN
+Image: Active construction site
+Duration: Sesuai scope
+Detail: Pengawasan, laporan berkala
+
+STEP 06 — SERAH TERIMA
+Image: Happy client + completed project
+Detail: Final inspection, walkthrough, warranty
+
+Progress bar animation follows scroll position
+```
+
+---
+
+### PAGE 6 — KONTAK
+
+```
+LAYOUT: Split — Form left / Info + Map right
+
+LEFT — CONTACT FORM:
+  Title: "Mari Berbicara"
+  Fields:
+  - Nama Lengkap *
+  - Email *
+  - No. WhatsApp *
+  - Kota / Lokasi Proyek *
+  - Layanan yang diminati [Dropdown: Arsitektur / Interior / Kontraktor / Konsultasi]
+  - Estimasi Budget [Range slider optional]
+  - Ceritakan proyek Anda [Textarea]
+  - Upload referensi gambar [File input, optional]
+  [Kirim Pesan] button → Copper Gold
+
+RIGHT — CONTACT INFO:
+  📍 Jl. Keputih Tegal Bakti I No.51
+     Keputih, Kec. Sukolilo
+     Surabaya, Jawa Timur 60111
+  
+  📱 0812-3456-5694 (WhatsApp & Telp)
+  🕐 Senin – Sabtu: 08.00 – 17.00 WIB
+  🌐 www.haloruma.co.id (placeholder)
+  
+  Quick connect:
+  [WhatsApp Chat →] [Instagram →]
+
+EMBEDDED MAP:
+  Google Maps iframe — pinned location
+  "Kunjungi Studio Kami"
+
+OFFICE PHOTO:
+  Studio/office exterior or interior photo
+```
+
+---
+
+## 🖼️ VISUAL CONTENT GUIDE — IMAGE LIBRARY
+
+### Required Photography Themes
+
+```
+SECTION A — ARSITEKTUR EKSTERIOR
+[ ] Modern minimalist house — white/concrete, clean lines
+[ ] Contemporary commercial building — glass facade
+[ ] Luxury villa exterior — pool + landscape
+[ ] Urban apartment building
+[ ] Before/after renovation shots
+
+SECTION B — DESAIN INTERIOR
+[ ] Living room — modern minimalist, neutral palette
+[ ] Master bedroom — luxury, warm lighting
+[ ] Kitchen — marble island + wood tones
+[ ] Home office — clean, productive space
+[ ] Dining room — dramatic pendant lighting
+[ ] Bathroom — hotel-style luxury
+[ ] Open-plan office space
+[ ] Retail / boutique interior
+[ ] Cafe / restaurant — moody atmosphere
+
+SECTION C — PROSES KONSTRUKSI
+[ ] Architect reviewing blueprints (on-site)
+[ ] 3D rendering on screen / presentation
+[ ] Material sampling / mood board flat lay
+[ ] Construction site — workers, structure
+[ ] Site survey with measuring tools
+[ ] Client meeting / consultation
+
+SECTION D — TIM & BRAND
+[ ] Team photo — professional, studio setting
+[ ] Studio/office interior
+[ ] Architect/designer at drafting table
+[ ] Detail shot: hands on blueprint/model
+
+IMAGE STYLE GUIDELINES:
+- Color grade: warm, slightly desaturated
+- Avoid: stock-photo clichés, overly staged shots
+- Preferred: natural light, real project photos
+- Format: 16:9 landscape for hero, 4:5 for cards, 1:1 for gallery
+- Resolution: min 2000px wide for web
+```
+
+---
+
+## ⚡ INTERACTION & ANIMATION SPECS
+
+```
+PAGE LOAD:
+- Logo draws itself (SVG path animation, 1.2s)
+- Nav items fade in staggered (0.1s each)
+- Hero text lines slide up (0.15s delay each line)
+- Hero image reveals with clip-path wipe (0.8s ease)
+
+SCROLL ANIMATIONS:
+- Elements: fade-up + slight translateY (30px → 0)
+- Trigger: 80% into viewport
+- Duration: 0.6s ease-out
+- Stats: count-up animation on enter
+
+HOVER STATES:
+- Cards: translateY(-6px) + shadow deepens
+- Images: scale(1.04) with overflow hidden
+- Buttons: background slides in from left
+- Nav links: underline grows from center
+
+CURSOR: Custom cursor — small circle + architectural crosshair
+(desktop only)
+
+TRANSITIONS:
+- Page transitions: horizontal slide with copper gold flash bar
+- Image loading: blur-to-sharp (blur placeholder)
+
+PORTFOLIO FILTER:
+- Masonry grid reflow with smooth animation (GSAP Flip)
+
+PARALLAX:
+- Hero image: 20% scroll offset
+- Section backgrounds: 10% offset
+```
+
+---
+
+## 📱 RESPONSIVE BREAKPOINTS
+
+```
+DESKTOP XL:  1440px+ → Full layout, max-width 1320px centered
+DESKTOP:     1200px  → Standard layout
+TABLET:      768px   → 2-column, stacked cards
+MOBILE:      375px   → Single column, full-width elements
+
+MOBILE-SPECIFIC:
+- Hamburger menu → full-screen overlay
+- Hero: stacked (image above text)
+- Stats: 2×2 grid
+- Services: full-width cards with scroll
+- Portfolio: 2-column masonry
+- Footer: stacked single column
+```
+
+---
+
+## 🔧 TECHNICAL STACK RECOMMENDATION
+
+```
+FRONTEND:
+- Framework: Next.js 14 (App Router) + TypeScript
+- Styling: Tailwind CSS + CSS Variables
+- Animation: GSAP (ScrollTrigger, Flip) + Framer Motion
+- Gallery: Swiper.js
+- Icons: Lucide React + custom SVG
+
+PERFORMANCE:
+- Images: next/image (WebP, lazy load, blur placeholder)
+- Fonts: next/font (self-hosted Google Fonts)
+- Core Web Vitals target: LCP < 2.5s, CLS < 0.1
+
+SEO:
+- Metadata: OpenGraph + Twitter Cards
+- Schema: LocalBusiness + ProfessionalService JSON-LD
+- Sitemap: auto-generated
+
+CONTACT INTEGRATIONS:
+- WhatsApp: wa.me deep link + floating button
+- Form: Formspree / EmailJS / custom API
+- Maps: Google Maps Embed API
+
+ANALYTICS:
+- Google Analytics 4
+- Google Search Console
+- Microsoft Clarity (heatmaps)
+```
+
+---
+
+## 🗂️ FIGMA FILE STRUCTURE
+
+```
+📁 HALORUMA — Company Profile
+│
+├── 📁 00_DESIGN SYSTEM
+│   ├── Colors & Tokens
+│   ├── Typography Scale
+│   ├── Grid & Spacing
+│   ├── Icons Library
+│   └── Components Library
+│
+├── 📁 01_DESKTOP (1440px)
+│   ├── Home
+│   ├── Tentang Kami
+│   ├── Layanan
+│   ├── Portofolio
+│   ├── Portofolio Detail
+│   ├── Proses
+│   └── Kontak
+│
+├── 📁 02_MOBILE (375px)
+│   ├── Home
+│   ├── Tentang Kami
+│   ├── Layanan
+│   ├── Portofolio
+│   └── Kontak
+│
+├── 📁 03_COMPONENTS
+│   ├── Navigation
+│   ├── Hero variants
+│   ├── Cards
+│   ├── Buttons & CTAs
+│   ├── Forms
+│   ├── Footer
+│   └── Modals & Overlays
+│
+├── 📁 04_PROTOTYPE FLOWS
+│   ├── Desktop flow
+│   └── Mobile flow
+│
+└── 📁 05_ASSETS
+    ├── Logo files (SVG/PNG all variants)
+    ├── Photography (organized by category)
+    ├── Illustrations & Icons
+    └── Brand Guideline PDF
+```
+
+---
+
+## 📋 CONTENT CHECKLIST
+
+```
+COPY & TEXT:
+[ ] Tagline & brand statement
+[ ] About us — company story (300 words)
+[ ] Each service description (150 words each)
+[ ] Process step descriptions (100 words each)
+[ ] Meta descriptions for all pages
+[ ] FAQ content (min 8 questions)
+[ ] Blog article topics list
+
+VISUAL ASSETS:
+[ ] Logo (AI/SVG source + all variants)
+[ ] Photography: min 30 curated project photos
+[ ] Team photos: professional headshots
+[ ] Office/studio photos: 5–8 photos
+[ ] Icon set: 20 custom icons (architecture themed)
+[ ] 3D renders or portfolio project renders
+
+LEGAL & TRUST:
+[ ] Business license/SIUP scan (for trust section)
+[ ] Association membership logos (IAI, HDII, INKINDO)
+[ ] Client testimonials (min 5 with permission)
+[ ] Awards or recognition (if any)
+[ ] Privacy Policy text
+[ ] Terms of Service text
+
+TECHNICAL:
+[ ] Domain name confirmed
+[ ] Hosting provider selected
+[ ] SSL certificate
+[ ] Business email setup (@haloruma.co.id)
+[ ] WhatsApp Business account
+[ ] Google Business Profile verified
+[ ] Instagram Business account
+[ ] Google Analytics property created
+```
+
+---
+
+## 🎨 MOOD BOARD DIRECTION
+
+```
+AESTHETIC DIRECTION: "Warm Brutalist Luxury"
+─────────────────────────────────────────────
+Combine the raw confidence of brutalism with 
+the warmth of Japandi/wabi-sabi and the 
+precision of Swiss design — creating a brand 
+that feels simultaneously bold and inviting.
+
+REFERENCES:
+- Typography feel: Vogue × Wallpaper Magazine
+- Spatial feel: Tokyo luxury hotel × Surabaya creative studio
+- Color feel: Natural stone, aged copper, warm concrete
+
+DESIGN PRINCIPLES:
+1. Every element earns its place — no decoration for decoration's sake
+2. Photography is the hero — design serves the images
+3. Generous white space = confidence
+4. Copper gold details = signature luxury touch
+5. Architectural grid system throughout
+
+AVOID:
+✗ Purple/blue gradient tech-startup aesthetics
+✗ Clip art or generic stock illustrations
+✗ Busy layouts with too many elements competing
+✗ Comic Sans or decorative script fonts
+✗ Generic construction iconography (hard hats, etc.)
+```
+
+---
+
+## 📊 KPI & SUCCESS METRICS
+
+```
+TARGET METRICS (90 days post-launch):
+- Organic sessions: 500+/month
+- WhatsApp inquiries from website: 20+/month
+- Portfolio page views: 60% of all sessions
+- Contact form submissions: 10+/month
+- Bounce rate: < 50%
+- Session duration: > 2 minutes
+- Google Business Profile clicks: 100+/month
+
+CONVERSION FUNNEL:
+Visitor → Portfolio view → Service page → Contact/WhatsApp
+```
+
+---
+
+*Document prepared for: CV HALORUMA PRAKARSA KARYA*
+*Contact: 0812-3456-5694 | Surabaya, Jawa Timur*
+*Blueprint Version: 1.0 | Ready for Figma Implementation*
+
+---
+> **Note untuk Tim Desainer Figma:**
+> Gunakan dokumen ini sebagai panduan lengkap. Setiap section, warna, font, dan komponen telah dispecifikasi. Prioritaskan desktop design dulu (1440px), kemudian adaptasi ke mobile (375px). Gunakan Auto Layout di seluruh komponen untuk responsivitas. Buat design token di awal sebelum memulai halaman manapun.
